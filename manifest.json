@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Chegg Skip Extension",
+  "version": "0.1",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon128.png",
+    "128": "icon128.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://expert.chegg.com/expertqna"],
+      "js": ["contentNEW.js"]
+    },
+    {
+      "matches": ["https://www.chegg.com/homework-help/expertquestion"],
+      "js": ["jquery-3.3.1.min.js", "contentOLD.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icon.png"
+  }
+}
